@@ -8,7 +8,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     public static final String MYPREFS = "myprefs";
@@ -30,10 +32,15 @@ public class MainActivity extends AppCompatActivity {
      */
     public void handleClick(View view) {
         Log.e(TAG,"handleClick");
-
+        CheckBox checkBox = findViewById(R.id.checkBox);
         switch (view.getId()){
             case R.id.buttonLogin:
-                validateLogin();
+                if(validateLogin()) {
+                    if (checkBox.isChecked()) {
+                        saveData();
+                    }
+                    startHome();
+                }
                 break;
             case R.id.buttonRegister:
                 
@@ -84,15 +91,17 @@ public class MainActivity extends AppCompatActivity {
         //save file
         editor.apply();
     }
-    private void validateLogin() {
+    private boolean validateLogin() {
         String name = nameEditText.getText().toString();
         String pwd = pwdEditText.getText().toString();
         if(name.equals("admin") && pwd.equals("password")){
-            startHome();
+            return true;
         }
+        return false;
     }
 
     private void startHome() {
         Log.i(TAG,"Login successful");
+        Toast.makeText(this,"Login successful",Toast.LENGTH_SHORT);
     }
 }
