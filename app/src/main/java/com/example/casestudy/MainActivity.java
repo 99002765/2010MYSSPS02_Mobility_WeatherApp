@@ -103,5 +103,9 @@ public class MainActivity extends AppCompatActivity {
     private void startHome() {
         Log.i(TAG,"Login successful");
         Toast.makeText(this,"Login successful",Toast.LENGTH_SHORT);
+        Intent hIntent = new Intent(MainActivity.this, HomeActivity.class);
+        hIntent.putExtra("userName",R.id.userName);
+        hIntent.putExtra("password",R.id.password);
+        startActivity(hIntent);
     }
 }

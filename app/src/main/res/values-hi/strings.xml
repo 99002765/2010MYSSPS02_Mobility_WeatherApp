@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="username">उपयोगकर्ता नाम</string>
+    <string name="password">कुंजिका</string>
+    <string name="login">लॉग इन करें</string>
+    <string name="register">रजिस्टर करें</string>
+    <string name="remember_me">मुझे याद रखना</string>
+</resources>
