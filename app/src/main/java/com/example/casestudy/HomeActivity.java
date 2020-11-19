@@ -12,7 +12,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        String[] languagesData = new String[]{"english", "hindi", "urdu", "arabic", "kannada"};
+        String[] languagesData = new String[]{"Mumbai", "Bangalore", "Mysore", "Hyderabad", "Chennai"};
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         MyAdapter adapter = new MyAdapter(this,languagesData);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

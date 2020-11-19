@@ -6,6 +6,7 @@
     android:textAppearance="?android:attr/textAppearanceListItemSmall"
     android:gravity="center_vertical"
     android:text="sample text"
+
     android:background="@color/design_default_color_primary_dark"
     android:textColor="#fff"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
