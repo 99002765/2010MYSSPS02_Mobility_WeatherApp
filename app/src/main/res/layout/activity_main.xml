@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
     tools:context=".MainActivity">
 
     <EditText
@@ -12,8 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +28,7 @@
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
+        android:background="@color/white"
         app:layout_constraintStart_toStartOf="@+id/userName"
         app:layout_constraintTop_toBottomOf="@+id/userName" />
 
@@ -33,26 +36,13 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="29dp"
-        android:layout_marginRight="29dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
         android:onClick="handleClick"
         android:text="@string/login"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonRegister"
-        app:layout_constraintEnd_toStartOf="@+id/buttonRegister"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
-        android:onClick="handleClick"
-        android:text="@string/register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonLogin"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <CheckBox
@@ -63,6 +53,7 @@
         android:layout_marginLeft="1dp"
         android:layout_marginTop="22dp"
         android:text="@string/remember_me"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 </androidx.constraintlayout.widget.ConstraintLayout>

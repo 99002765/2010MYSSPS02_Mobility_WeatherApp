@@ -1,16 +1,15 @@
 package com.example.casestudy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     public static final String MYPREFS = "myprefs";
@@ -42,11 +41,12 @@ public class MainActivity extends AppCompatActivity {
                     startHome();
                 }
                 break;
-            case R.id.buttonRegister:
-                
-                break;
         }
     }
+
+    private void register() {
+    }
+
     private void restoreData() {
         //open file
         SharedPreferences preferences= getSharedPreferences(MYPREFS,MODE_PRIVATE);

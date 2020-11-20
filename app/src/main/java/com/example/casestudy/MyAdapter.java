@@ -13,12 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
  * MyAdapter job is to put data into each row of the listview
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.WordViewHolder> {
-    String[] languages;
+    String[] data;
     LayoutInflater layoutInflater;
-
-    public MyAdapter(Context context, String[] languagesData) {
-        languages = languagesData;
+    OnCityListener mOnCityListener;
+    public MyAdapter(Context context, String[] languagesData, OnCityListener onCityListener) {
+        data = languagesData;
         layoutInflater = LayoutInflater.from(context);
+        this.mOnCityListener= onCityListener;
     }
 
     /**
@@ -32,7 +33,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.WordViewHolder> {
     @Override
     public MyAdapter.WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View rowView = layoutInflater.inflate(R.layout.row_listview,parent,false);
-        return new WordViewHolder(rowView);
+        return new WordViewHolder(rowView, mOnCityListener);
     }
 
     /**
@@ -43,7 +44,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.WordViewHolder> {
      */
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.WordViewHolder holder, int position) {
-        holder.titleTextView.setText(languages[position]);
+        holder.titleTextView.setText(data[position]);
+        //holder.titleTextView.onclick
     }
 
     /**
@@ -53,7 +55,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.WordViewHolder> {
      */
     @Override
     public int getItemCount() {
-        return languages.length;
+        return data.length;
     }
 
 
@@ -61,11 +63,22 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.WordViewHolder> {
      * manasa
      * WordViewHolder job is to hold the recycled stock and new stock of wooden planks
      */
-    public class WordViewHolder extends RecyclerView.ViewHolder {
+    public class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public  TextView titleTextView;
-        public WordViewHolder(@NonNull View itemView) {
+        OnCityListener onCityListener;
+        public WordViewHolder(@NonNull View itemView,OnCityListener onCityListener) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.textviewRow);
+            this.onCityListener= onCityListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onCityListener.onCityClick(getAdapterPosition());
+        }
+    }
+    public interface OnCityListener{
+        void onCityClick(int position);
     }
 }
