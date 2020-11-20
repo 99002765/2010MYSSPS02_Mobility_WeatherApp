@@ -14,7 +14,7 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         TextView textView= findViewById(R.id.textView);
-        textView.setText(this.getIntent().getStringExtra("Json"));
+        textView.setText(this.getIntent().getStringExtra("object"));
         //Log.d(TAG, "onCreate: ");
     }
 }
