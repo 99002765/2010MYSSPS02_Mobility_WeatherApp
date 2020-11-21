@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CaseStudy">
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".weatherFile.WeatherActivity"></activity>
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

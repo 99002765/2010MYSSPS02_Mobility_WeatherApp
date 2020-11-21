@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.casestudy.weatherFile.WeatherActivity;
+
 public class HomeActivity extends AppCompatActivity implements MyAdapter.OnCityListener {
     private static final String TAG = HomeActivity.class.getSimpleName();
     String[] data;
@@ -15,7 +17,7 @@ public class HomeActivity extends AppCompatActivity implements MyAdapter.OnCityL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        data = new String[]{"Mumbai", "Bangalore", "Mysore", "Hyderabad", "Chennai","Bhopal","Bhubaneshwar","Indore","Gawhati","Patna","Kolkata","Ranchi","Srinagar","Delhi"};
+        data = new String[]{"Mumbai", "Bangalore", "Mysore", "Hyderabad", "Chennai","Bhopal","Bhubaneshwar","Indore","Guwahati","Patna","Kolkata","Ranchi","Srinagar","Delhi","Vijayawada","Khammam","Chandigarh","Gandhinagar","Jaipur",};
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         MyAdapter adapter = new MyAdapter(this,data,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
